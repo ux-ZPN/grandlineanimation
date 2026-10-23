@@ -83,11 +83,11 @@ export const PROJECTS: ProjectItem[] = [
   },
   {
     id: 8,
-    title: "Max Sports",
-    src: "/projects/max-sports.png",
+    title: "Xplore Xperience",
+    src: "/projects/xplore-xperience.png",
     fallback: `${IMG_BASE}/img4.png`,
-    link: "https://maxsportsstore.com/",
-    alt: "Max Sports - Play Faster. Strike Sharper.",
+    link: "https://xplorexp.in/",
+    alt: "Xplore Xperience - Journeys Designed to Match the Way You Travel",
   },
 ];
 
@@ -104,6 +104,8 @@ const generateSpatialCards = (items: ProjectItem[] = PROJECTS) => {
     { x: 12, y: 32, z: -450 },  // Deep Right Bottom
   ];
 
+  const centerIdx = (items.length - 1) / 2;
+
   return items.map((item, i) => {
     const coords = spatialCoordinates[i % spatialCoordinates.length];
     const rotateY = coords.x * -0.5;
@@ -111,12 +113,12 @@ const generateSpatialCards = (items: ProjectItem[] = PROJECTS) => {
 
     return {
       item,
-      stacked: { x: 0, y: 0, z: i * 2, rotateZ: (i - 3.5) * 4, rotateY: 0, rotateX: 0 },
+      stacked: { x: 0, y: 0, z: i * 2, rotateZ: (i - centerIdx) * 4, rotateY: 0, rotateX: 0 },
       spatial: {
         x: coords.x,
         y: coords.y,
         z: coords.z,
-        rotateZ: (i - 3.5) * 1.5,
+        rotateZ: (i - centerIdx) * 1.5,
         rotateY,
         rotateX,
       },
