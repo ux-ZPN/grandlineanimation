@@ -80,7 +80,13 @@ const PRESETS: { [K in HalftonePreset]: HalftonePalette } = {
 const DEFAULT_COLUMNS: FooterColumn[] = [
   { title: "Work", links: [{ label: "Index" }, { label: "Archive" }, { label: "Journal" }] },
   { title: "Studio", links: [{ label: "About" }, { label: "Process" }, { label: "Careers" }] },
-  { title: "Contact", links: [{ label: "hello@grandlinestudio.com" }, { label: "+1 (555) 019-2834" }] },
+  {
+    title: "Contact",
+    links: [
+      { label: "contact@grandlinestudio.agency", href: "mailto:contact@grandlinestudio.agency" },
+      { label: "+91 93807 92781", href: "tel:+919380792781" },
+    ],
+  },
 ]
 
 const SANS_STACK = '"Inter Tight", "Inter Variable", "Inter", "Helvetica Neue", Arial, system-ui, sans-serif'
